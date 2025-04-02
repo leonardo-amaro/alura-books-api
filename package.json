@@ -1,0 +1,23 @@
+{
+  "name": "alura-books-api",
+  "version": "1.0.0",
+  "description": "API para realizar CRUD com os livros armazenados pelo projeto alura-books",
+  "keywords": [
+    "node",
+    "nodemon",
+    "api",
+    "express"
+  ],
+  "license": "ISC",
+  "author": "Leonardo Silva",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon app.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "nodemon": "^3.1.9"
+  }
+}
