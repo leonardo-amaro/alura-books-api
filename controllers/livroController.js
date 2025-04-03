@@ -1,6 +1,9 @@
+const { getListaLivros } = require("../services/livroService");
+
 function getTodosLivros(req, res) {
   try {
-    res.send("alura-books-api");
+    const livros = getListaLivros();
+    res.send(livros);
   } catch (error) {
     res.status(500);
     res.send(error.message)
