@@ -7,6 +7,17 @@ function getTodosLivros(req, res) {
   }
 }
 
+function getLivro(req, res) {
+  try {
+    const id = req.params.id;
+    res.send(`Livro de ID ${id}`);
+  } catch (error) {
+    res.status(404);
+    res.send("Livro não encontrado");
+  }
+}
+
 module.exports = {
-  getTodosLivros
+  getTodosLivros,
+  getLivro
 }
