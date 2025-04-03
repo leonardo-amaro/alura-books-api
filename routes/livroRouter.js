@@ -1,9 +1,8 @@
 const { Router } = require("express");
+const { getTodosLivros } = require("../controllers/livroController");
 
 const router = Router();
 
-router.get("/", (req, res) => {
-  res.send("alura-books-api");
-});
+router.get("/", getTodosLivros);
 
 module.exports = router;
