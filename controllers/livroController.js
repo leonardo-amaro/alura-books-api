@@ -1,9 +1,8 @@
-const { getListaLivros } = require("../services/livroService");
+const { getListaLivros, getLivroId } = require("../services/livroService");
 
 function getTodosLivros(req, res) {
   try {
-    const livros = getListaLivros();
-    res.send(livros);
+    res.send(getListaLivros());
   } catch (error) {
     res.status(500);
     res.send(error.message)
@@ -12,8 +11,7 @@ function getTodosLivros(req, res) {
 
 function getLivro(req, res) {
   try {
-    const id = req.params.id;
-    res.send(`Livro de ID ${id}`);
+    res.send(getLivroId(req.params.id));
   } catch (error) {
     res.status(404);
     res.send("Livro não encontrado");
