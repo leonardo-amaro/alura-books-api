@@ -7,8 +7,8 @@ function getListaLivros() {
 }
 
 function getLivroId(id) {
-  return livros.find(
-    (livro) => livro.id == id
+  if (id && Number(id)) return livros.find(
+    (livro) => livro.id === Number(id)
   );
 }
 

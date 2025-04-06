@@ -5,16 +5,20 @@ function getTodosLivros(req, res) {
     res.send(getListaLivros());
   } catch (error) {
     res.status(500);
-    res.send(error.message)
+    res.send(error.message);
   }
 }
 
 function getLivro(req, res) {
   try {
-    res.send(getLivroId(req.params.id));
+    if (getLivroId(req.params.id)) {
+      res.send(getLivroId(req.params.id));
+    } else {
+      throw new Error("Este livro não foi encontrado ou não existe...");
+    }
   } catch (error) {
     res.status(404);
-    res.send("Livro não encontrado");
+    res.send(error.message);
   }
 }
 
